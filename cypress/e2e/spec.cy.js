@@ -1,5 +1,18 @@
-describe('empty spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+const ordersStub = {
+
+}
+
+
+describe('Burrito Builder', () => {
+
+  beforeEach()
+  
+  cy.intercept('GET', "http://localhost:3000/ ", ordersStub )
+
+
+  it('Visits the page', () => {
+    cy.visit('http://localhost:3000/')
   })
+
+
 })
